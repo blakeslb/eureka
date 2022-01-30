@@ -5,6 +5,18 @@
  * @package Eureka
  */
 
+if (! defined ( 'EUREKA_DIR_PATH')) {
+    define( 'EUREKA_DIR_PATH', untrailingslashit( get_template_directory()));
+}
+
+require_once EUREKA_DIR_PATH . '/inc/helpers/autoloader.php';
+
+function eureka_get_theme_instance() {
+    \EUREKA_THEME\Inc\EUREKA_THEME::get_instance();
+}
+
+eureka_get_theme_instance(); 
+
  function eureka_enqueue_scripts() {
 
     //Register Styles. 
